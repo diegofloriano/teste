@@ -75,7 +75,7 @@ let sequencia = [1, 2, 3, 4, 5];
 let visitante = { nome: "João", idade: 30 };
 // TypeScript infere que pessoa é do tipo { nome: string, idade: number }
 
-
+console.log("oi");
 
 
 

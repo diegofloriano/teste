@@ -76,6 +76,8 @@ Crie uma função chamada calculadora que recebe três parâmetros:
 numero1 (um número), numero2 (um número) e operacao (uma string representando a operação a ser realizada: "soma", "subtracao", "multiplicacao" ou "divisao"). 
 A função deve retornar o resultado da operação entre numero1 e numero2.
 
+
+
 Resultado esperado:
 console.log(calculadora(5, 3, "soma")); // Saída esperada: 8
 console.log(calculadora(10, 2, "subtracao")); // Saída esperada: 8
@@ -118,3 +120,19 @@ let frase: string = "Ana"
 const fraseInverso = frase.split('').reverse().join('');
 
 */
+
+function calculadora( numero1: number, numero2: number, operacao: string){
+    if (operacao == "soma")
+        return numero1 + numero2;
+    if (operacao == "subtracao")
+        return numero1 - numero2;
+    if (operacao == "multiplicacao")
+        return numero1 * numero2;
+    if (operacao == "divisao")
+        return numero1 / numero2;
+}
+   
+console.log(calculadora(3,3, "subtracao"))
+
+
+

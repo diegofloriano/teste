@@ -18,7 +18,12 @@ let valorQualquer = 10;
 valorQualquer = "abc";
 valorQualquer = true;
 // Tipo object para valores não primitivos
-let pessoaObjeto = { nome: "João", idade: 25 };
+let pessoaObjeto = { nome: "João", idade: 25 }; // anotation
+let pessoaObjeto1 = { nome: "João", idade: 25 }; //inferencia
+pessoaObjeto1 = {
+    nome: "",
+    idade: 33
+};
 // Tipo union para aceitar múltiplos tipos
 let nota = 10;
 nota = "A";
