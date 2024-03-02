@@ -108,4 +108,11 @@ function calculadora(numero1, numero2, operacao) {
     if (operacao == "divisao")
         return numero1 / numero2;
 }
-console.log(calculadora(3, 3, "subtracao"));
+console.log(calculadora(3, 3, "multiplicacao"));
+function verificarPalindromo(frase) {
+    const fraseInverso = frase.split('').reverse().join('');
+    if (frase == fraseInverso)
+        return "true";
+    return "false";
+}
+console.log(verificarPalindromo("ana"));
