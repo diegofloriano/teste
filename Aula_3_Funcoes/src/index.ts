@@ -132,7 +132,18 @@ function calculadora( numero1: number, numero2: number, operacao: string){
         return numero1 / numero2;
 }
    
-console.log(calculadora(3,3, "subtracao"))
+console.log(calculadora(3,3, "multiplicacao"))
 
 
 
+function verificarPalindromo (frase: string){
+
+    const fraseInverso = frase.split('').reverse().join('');
+
+    if(frase == fraseInverso)
+            return "true";
+    return "false";
+}
+
+
+console.log(verificarPalindromo("ana"))
