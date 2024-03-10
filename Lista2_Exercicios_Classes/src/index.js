@@ -70,54 +70,66 @@ class Calculadora {
         return this.valor1 / this.valor2;
     }
     Porcentagem() {
-        return (this.valor1 * this.valor2) / 100;
+        return (this.valor1 / this.valor2) * 100;
     }
 }
-let calculadora1 = new Calculadora(1, 0);
+let calculadora1 = new Calculadora(20, 10);
 console.log('A soma é: ' + calculadora1.Soma());
 console.log('A subtração é: ' + calculadora1.Subtracao());
 console.log('A multiplicação é: ' + calculadora1.Multiplicacao());
 console.log('A divisão é: ' + calculadora1.Divisao());
-console.log('A porcentagem é: ' + calculadora1.Porcentagem());
+console.log('A porcentagem do primeiro valor em relacao ao segundo é: ' + calculadora1.Porcentagem() + '%');
 //3 - Desenvolva uma classe Produto em TypeScript
-// class Produto{
-//     private nome: string;
-//     private preco: number;
-//     private estoque: number;
-//     constructor(nome:string, preco:number, estoque: number){
-//         this.nome = nome;
-//         this.preco = preco;
-//         this.estoque = estoque;
-//     }   
-//     get getNome():string{
-//         return this.nome;
-//     }
-//     get getPreco():number{
-//         return this.preco;
-//     }
-//     get getEstoque():number{
-//         return this.estoque;
-//     }
-//     set setNome(novoNome: string){
-//         this.nome = novoNome;
-//     }
-//     set setPreco(novoPreco: number){
-//         this.preco = novoPreco;
-//     }
-//     set setEstoque(novoEstoque: number){
-//         this.estoque = novoEstoque;
-//     }
-//     calcularValorTotalEmEstoque(): number{
-//         return 2024 - this.estoque;
-//     }
-//     reporEstoque(quantidade: number):{
-//     }
-//     vender(quantidade: number): {
-//     }
-// }
-//     //Instancia da classe Carro
-//     let produto1 = new Produto("biscoito", 20 , 10);
-//     console.log('Nome: ' + produto1.getNome);
-//     console.log('Preco: R$' + produto1.getPreco);
-//     console.log('Quantidade: ' + produto1.getEstoque);
-//     console.log('O calculo da idade do carro é: ' + produto1.calcularValorTotalEmEstoque());
+class Produto {
+    constructor(nome, preco, estoque) {
+        this.nome = nome;
+        this.preco = preco;
+        this.estoque = estoque;
+    }
+    get getNome() {
+        return this.nome;
+    }
+    get getPreco() {
+        return this.preco;
+    }
+    get getEstoque() {
+        return this.estoque;
+    }
+    set setNome(novoNome) {
+        this.nome = novoNome;
+    }
+    set setPreco(novoPreco) {
+        this.preco = novoPreco;
+    }
+    set setEstoque(novoEstoque) {
+        this.estoque = novoEstoque;
+    }
+    calcularValorTotalEmEstoque() {
+        return this.preco * this.estoque;
+    }
+    reporEstoque(quantidade) {
+        if (quantidade < 0) {
+            throw new Error("A quantidade de reposição deve ser positiva.");
+        }
+        this.estoque += quantidade;
+    }
+    vender(quantidade) {
+        if (quantidade < 0) {
+            throw new Error("A quantidade vendida deve ser positiva.");
+        }
+        if (quantidade > this.estoque) {
+            throw new Error("Quantidade insuficiente em estoque.");
+        }
+        this.estoque -= quantidade;
+    }
+}
+// Instancia da classe Produto
+let produto1 = new Produto("biscoito", 20, 10);
+console.log('Nome: ' + produto1.getNome);
+console.log('Preco: R$' + produto1.getPreco);
+console.log('Quantidade: ' + produto1.getEstoque);
+console.log('O valor total em estoque é: R$' + produto1.calcularValorTotalEmEstoque());
+produto1.reporEstoque(5);
+console.log('Quantidade reposta: ' + produto1.getEstoque);
+produto1.vender(3);
+console.log('Quantidade após a venda: ' + produto1.getEstoque);

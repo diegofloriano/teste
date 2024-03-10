@@ -97,7 +97,7 @@ class Calculadora{
     }
 
     Porcentagem(): number{
-        return (this.valor1 * this.valor2) / 100;
+        return (this.valor1 / this.valor2) * 100;
     }
 }
 
@@ -107,7 +107,7 @@ console.log('A soma é: ' + calculadora1.Soma());
 console.log('A subtração é: ' + calculadora1.Subtracao());
 console.log('A multiplicação é: ' + calculadora1.Multiplicacao());
 console.log('A divisão é: ' + calculadora1.Divisao());
-console.log('A porcentagem é: ' + calculadora1.Porcentagem());
+console.log('A porcentagem do primeiro valor em relacao ao segundo é: ' + calculadora1.Porcentagem() + '%');
 
 
 //3 - Desenvolva uma classe Produto em TypeScript
