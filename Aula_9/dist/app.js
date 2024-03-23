@@ -11,9 +11,8 @@ const PORT = (_a = process.env.PORT) !== null && _a !== void 0 ? _a : 3000;
 function appLog() {
     console.log("A API está disponivel no URL http://localhost:3000");
 }
-app.listen(PORT, appLog);
 function hello(resq, res) {
-    return res.send("Hello World!!");
+    return res.status(201).json({ mensagem: "Hello World!!" });
 }
 app.get("/api/hello", hello);
 app.listen(PORT, appLog);
